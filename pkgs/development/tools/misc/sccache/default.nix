@@ -1,16 +1,17 @@
 { stdenv, fetchFromGitHub, cargo, rustc, rustPlatform, pkgconfig, glib, openssl, darwin }:
 
 rustPlatform.buildRustPackage rec {
-  version = "0.2.13";
+  version = "0.2.14-dev";
   pname = "sccache";
 
   src = fetchFromGitHub {
     owner = "mozilla";
     repo = "sccache";
-    rev = version;
+    rev = "5c60588e324e3d749c8991b37c76eb7ea82dfd6b";
     sha256 = "19z9fdkn3bnr8q33m66h2by6bs6kmhw3a2lq2n8bywmnhrjwhxpw";
   };
-  cargoSha256 = "1pm7il0x7i9mqx4vsmkcs8nq0dqr5ck3x3x7la6k39igaxn9vkwz";
+
+  cargoSha256 = "sha256-fEiq4yMRk8GNdUiJAaF/NJYRB8JFlx1AE7kQ+xrXaXo=";
 
   cargoBuildFlags = [ "--features=all" ];
   nativeBuildInputs = [
