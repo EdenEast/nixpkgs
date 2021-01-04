@@ -10300,6 +10300,9 @@ in
   cargo-watch = callPackage ../development/tools/rust/cargo-watch {
     inherit (darwin.apple_sdk.frameworks) CoreServices;
   };
+  cargo-whatfeatures = callPackage ../development/tools/rust/cargo-whatfeatures {
+    inherit (darwin.apple_sdk.frameworks) Security;
+  };
   cargo-wipe = callPackage ../development/tools/rust/cargo-wipe { };
   cargo-xbuild = callPackage ../development/tools/rust/cargo-xbuild { };
   cargo-generate = callPackage ../development/tools/rust/cargo-generate {
